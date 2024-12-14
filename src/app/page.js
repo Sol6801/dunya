@@ -11,15 +11,15 @@ export default function Home() {
       <div className="pt-24">
           <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-              <p className="uppercase tracking-loose w-full">What business are you?</p>
+              <p className="uppercase tracking-loose w-full">Dunya Idiomas</p>
               <h1 className="my-4 text-5xl font-bold leading-tight">
-                Main Hero Message to sell yourself!
+                DUNYA IDIOMAS 
               </h1>
               <p className="leading-normal text-2xl mb-8">
-                Sub-hero message, not too long and not too short. Make it just right!
+                Dunya Idiomas Dunya Idiomas Dunya Idiomas Dunya Idiomas Dunya Idiomas Dunya Idiomas
               </p>
               <button className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Subscribe
+                Contacto
               </button>
             </div>
             <div className="w-full md:w-3/5 py-6 text-center">
@@ -60,7 +60,7 @@ export default function Home() {
         <section className="bg-white border-b py-8">
           <div className="container max-w-5xl mx-auto m-8">
             <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-              Title
+              Nosotros
             </h2>
             <div className="w-full mb-4">
               <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>

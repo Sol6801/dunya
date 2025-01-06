@@ -95,7 +95,7 @@ export default function Navbar() {
 
   return (
     <nav id="header" className="fixed w-screen z-30 top-0 text-white transition-colors duration-300">
-      <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+      <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-5 lg:py-0">
         <div className="pl-4 flex items-center">
           <button
           onClick={home}
@@ -124,7 +124,7 @@ export default function Navbar() {
           id="nav-content" 
           className="fixed top-0 right-0 h-screen w-full lg:w-auto lg:h-auto lg:relative lg:flex lg:items-center invisible opacity-0 translate-x-full lg:translate-x-0 lg:opacity-100 lg:visible bg-white lg:bg-transparent transition-all duration-300 ease-in-out transform"
         >
-          <div className="container mx-auto h-full flex flex-col justify-center items-center lg:flex-row lg:justify-end lg:h-auto py-8">
+          <div className="container mx-auto h-full flex flex-col justify-center items-center lg:flex-row lg:justify-end lg:h-auto lg:py-5 py-8">
             <ul className="list-reset flex flex-col lg:flex-row justify-center flex-1 items-center space-y-8 lg:space-y-0">
               <li className="mr-0 lg:mr-3">
                 <a className="inline-block py-2 px-4 text-2xl lg:text-base font-bold no-underline text-gray-800 hover:text-gray-600" href="#nosotros">

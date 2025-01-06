@@ -65,7 +65,7 @@ const WhatsAppButton = () => (
 
 const HeroSection = () => (
   <div className="pt-24">
-    <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center mt-12">
+    <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-12">
       <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
         <p className="uppercase tracking-loose w-full">Escola de Português</p>
         <h1 className="my-4 text-5xl font-bold leading-tight">
@@ -103,8 +103,12 @@ const CoursesSection = () => (
       <div className="w-full mb-4">
         <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t" />
       </div>
-      <ImageRight />
-      <ImageLeft />
+      <a name="nos" className="mt-20">
+      <ImageRight/>
+      </a>
+      <a name="exp">
+      <ImageLeft/>
+      </a>
     </div>
   </section>
 );

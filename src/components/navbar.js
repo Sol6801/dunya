@@ -10,6 +10,12 @@ export default function Navbar() {
   const handleContact = () => {
     router.push("/contact");
   };
+  const nos = () => {
+    router.push("/#nos");
+  };
+  const exp = () => {
+    router.push("/#exp");
+  };
   const home = () => {
     router.push("/");
   };
@@ -127,14 +133,18 @@ export default function Navbar() {
           <div className="container mx-auto h-full flex flex-col justify-center items-center lg:flex-row lg:justify-end lg:h-auto lg:py-5 py-8">
             <ul className="list-reset flex flex-col lg:flex-row justify-center flex-1 items-center space-y-8 lg:space-y-0">
               <li className="mr-0 lg:mr-3">
-                <a className="inline-block py-2 px-4 text-2xl lg:text-base font-bold no-underline text-gray-800 hover:text-gray-600" href="#nosotros">
+                <button 
+                onClick={nos}                
+                className="inline-block py-2 px-4 text-2xl lg:text-base font-bold no-underline text-gray-800 hover:text-gray-600">
                   Nosotros
-                </a>
+                </button>
               </li>
               <li className="mr-0 lg:mr-3">
-                <a className="inline-block no-underline text-2xl lg:text-base text-gray-800 hover:text-gray-600 py-2 px-4" href="#testimonios">
-                  Testimonios
-                </a>
+                <button 
+                onClick={exp}
+                className="inline-block no-underline text-2xl lg:text-base text-gray-800 hover:text-gray-600 py-2 px-4">
+                  Experiencia
+                </button>
               </li>
             </ul>
             <button

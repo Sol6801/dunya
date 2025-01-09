@@ -83,7 +83,7 @@ export default function Contact() {
       <main className="bg-gradient-to-r from-[#000ec4] via-[#3c99d9] to-[#4eaec2]">
         <div className="container mx-auto px-4 pt-48">
           <h1 className="text-5xl font-bold text-center mb-12">Entre em Contato</h1>
-          <p className="leading-normal text-xl mb-8">Gostaria de estudar conosco? Entre em contato e tire todas as suas dúvidas! Estamos aqui para ajudar você a dar o primeiro passo na sua jornada de aprendizado do português.</p>
+          <p className="leading-normal tracking-normal text-center text-xl mb-8">Gostaria de estudar conosco? Entre em contato e tire todas as suas dúvidas! Estamos aqui para ajudar você a dar o primeiro passo na sua jornada de aprendizado do português.</p>
 
         </div>
         <WaveSVG /> 

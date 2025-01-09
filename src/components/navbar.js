@@ -32,13 +32,13 @@ export default function Navbar() {
       header.classList.add("bg-white");
       navaction.classList.remove("bg-white");
       navaction.classList.add("bg-sky-400");
-      navaction.classList.remove("text-gray-800");
+      navaction.classList.remove("text-blue-950");
       toToggle.forEach((el) => {
-        el.classList.add("text-gray-800");
+        el.classList.add("text-blue-950");
         el.classList.remove("text-white");
       });
       header.classList.add("shadow");
-      menuIcon.classList.add("text-gray-800");
+      menuIcon.classList.add("text-blue-950");
       menuIcon.classList.remove("text-white");
     };
 
@@ -46,13 +46,13 @@ export default function Navbar() {
       header.classList.remove("bg-white");
       navaction.classList.add("bg-white");
       navaction.classList.remove("bg-sky-400");
-      navaction.classList.add("text-gray-800");
+      navaction.classList.add("text-blue-950");
       toToggle.forEach((el) => {
         el.classList.add("text-white");
-        el.classList.remove("text-gray-800");
+        el.classList.remove("text-blue-950");
       });
       header.classList.remove("shadow");
-      menuIcon.classList.remove("text-gray-800");
+      menuIcon.classList.remove("text-blue-950");
       menuIcon.classList.add("text-white");
     };
 
@@ -135,14 +135,14 @@ export default function Navbar() {
               <li className="mr-0 lg:mr-3">
                 <button 
                 onClick={nos}                
-                className="inline-block py-2 px-4 text-2xl lg:text-base font-bold no-underline text-gray-800 hover:text-gray-600">
+                className="inline-block py-2 px-4 text-2xl lg:text-base font-bold no-underline text-blue-950 hover:text-blue-700">
                   Nosotros
                 </button>
               </li>
               <li className="mr-0 lg:mr-3">
                 <button 
                 onClick={exp}
-                className="inline-block no-underline text-2xl lg:text-base text-gray-800 hover:text-gray-600 py-2 px-4">
+                className="inline-block no-underline text-2xl lg:text-base text-blue-950 hover:text-blue-700 py-2 px-4">
                   Experiencia
                 </button>
               </li>
@@ -150,7 +150,7 @@ export default function Navbar() {
             <button
               onClick={handleContact}
               id="navAction"
-              className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-8 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xl lg:text-base"
+              className="mx-auto lg:mx-0 hover:underline bg-white text-blue-950 font-bold rounded-full mt-8 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xl lg:text-base"
             >
               Contacto
             </button>

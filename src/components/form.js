@@ -36,7 +36,7 @@ export default function Form() {
     };
 
     return (
-    <section className="container mx-auto text-center py-6"> 
+    <section className="container mx-auto text-center py-6 px-5"> 
     <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6 text-cyan-700">Contáctanos</h2>
       <form className="space-y-4" onSubmit={handleSubmit}>

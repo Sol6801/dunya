@@ -97,18 +97,16 @@ const HeroSection = () => (
 const CoursesSection = () => (
   <section className="bg-white py-8">
     <div className="container max-w-5xl mx-auto m-8">
-      <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+      <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-blue-950">
         Nossos Cursos
       </h2>
       <div className="w-full mb-4">
         <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t" />
       </div>
-      <a name="nos" className="mt-20">
+      <a name="nos" className="relative -top-24"></a>
       <ImageRight/>
-      </a>
-      <a name="exp">
+      <a name="exp" className="relative -top-24"></a>
       <ImageLeft/>
-      </a>
     </div>
   </section>
 );
@@ -130,7 +128,7 @@ export default function Home() {
         <CoursesSection />
         <Footer>
           <div className="flex flex-col items-center justify-center">
-            <h3 className="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
+            <h3 className="w-full my-2 text-3xl font-bold leading-tight text-center text-white pb-3">
               ¿Gostaria de estudar conosco?
             </h3>
             <button

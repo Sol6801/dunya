@@ -1,6 +1,7 @@
 export default function ImageLeft() {
   return (
     <div className="flex flex-wrap flex-col-reverse sm:flex-row">
+      
       {/* Text Section */}
       <div className="w-full sm:w-1/2 p-6 mt-6">
         <svg
@@ -154,9 +155,11 @@ export default function ImageLeft() {
           <circle cx="600.35" cy="480.68" r="11.968" fill="#ff6347" />
         </svg>
       </div>
+
       <div className="w-full sm:w-1/2 p-6 mt-6">
         <div className="align-middle">
-          <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
+          
+          <h3 className="text-3xl text-blue-950 font-bold leading-none mb-3">
             Como seria sua experiência conosco?
           </h3>
           <p className="text-gray-600 mb-8">

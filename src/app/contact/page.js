@@ -31,7 +31,7 @@ const WaveSVG = () => (
 );
 
 const ContactInfo = () => (
-  <div className="p-6 bg-white text-gray-950 mx-auto">
+  <div className="p-6 bg-white text-blue-950 mx-auto">
     <h3 className="text-3xl font-bold mb-6">Informações de Contato</h3>
     <div className="space-y-4">
       <p className="flex items-center">
@@ -83,6 +83,7 @@ export default function Contact() {
       <main className="bg-gradient-to-r from-[#000ec4] via-[#3c99d9] to-[#4eaec2]">
         <div className="container mx-auto px-4 pt-48">
           <h1 className="text-5xl font-bold text-center mb-12">Entre em Contato</h1>
+          <p className="leading-normal text-xl mb-8">Gostaria de estudar conosco? Entre em contato e tire todas as suas dúvidas! Estamos aqui para ajudar você a dar o primeiro passo na sua jornada de aprendizado do português.</p>
 
         </div>
         <WaveSVG /> 

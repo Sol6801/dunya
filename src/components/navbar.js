@@ -7,75 +7,92 @@ export default function Navbar() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    const navcontent = document.getElementById("nav-content");
+    const menuPath = document.getElementById("menu-icon-path");
+    
+    navcontent.classList.add("opacity-0", "invisible", "translate-x-full");
+    navcontent.classList.remove("opacity-100", "translate-x-0");
+    
+    if (window.scrollY <= 10) {
+      setTransparentTheme();
+    }
+    menuPath.setAttribute("d", "M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z");
+  };
+
   const handleContact = () => {
+    closeMenu();
     router.push("/contact");
   };
+  
   const nos = () => {
+    closeMenu();
     router.push("/#nos");
   };
+  
   const exp = () => {
+    closeMenu();
     router.push("/#exp");
   };
+  
   const home = () => {
+    closeMenu();
     router.push("/");
   };
 
-  useEffect(() => {
+  const setWhiteTheme = () => {
     const header = document.getElementById("header");
-    const navcontent = document.getElementById("nav-content");
     const navaction = document.getElementById("navAction");
     const toToggle = document.querySelectorAll(".toggleColour");
     const menuIcon = document.getElementById("menu-icon");
-    const menuPath = document.getElementById("menu-icon-path");
+    
+    header.classList.add("bg-white");
+    navaction.classList.remove("bg-white");
+    navaction.classList.add("bg-sky-400");
+    navaction.classList.remove("text-blue-950");
+    toToggle.forEach((el) => {
+      el.classList.add("text-blue-950");
+      el.classList.remove("text-white");
+    });
+    header.classList.add("shadow");
+    menuIcon.classList.add("text-blue-950");
+    menuIcon.classList.remove("text-white");
+  };
 
-    const setWhiteTheme = () => {
-      header.classList.add("bg-white");
-      navaction.classList.remove("bg-white");
-      navaction.classList.add("bg-sky-400");
-      navaction.classList.remove("text-blue-950");
-      toToggle.forEach((el) => {
-        el.classList.add("text-blue-950");
-        el.classList.remove("text-white");
-      });
-      header.classList.add("shadow");
-      menuIcon.classList.add("text-blue-950");
-      menuIcon.classList.remove("text-white");
-    };
+  const setTransparentTheme = () => {
+    const header = document.getElementById("header");
+    const navaction = document.getElementById("navAction");
+    const toToggle = document.querySelectorAll(".toggleColour");
+    const menuIcon = document.getElementById("menu-icon");
+    
+    header.classList.remove("bg-white");
+    navaction.classList.add("bg-white");
+    navaction.classList.remove("bg-sky-400");
+    navaction.classList.add("text-blue-950");
+    toToggle.forEach((el) => {
+      el.classList.add("text-white");
+      el.classList.remove("text-blue-950");
+    });
+    header.classList.remove("shadow");
+    menuIcon.classList.remove("text-blue-950");
+    menuIcon.classList.add("text-white");
+  };
 
-    const setTransparentTheme = () => {
-      header.classList.remove("bg-white");
-      navaction.classList.add("bg-white");
-      navaction.classList.remove("bg-sky-400");
-      navaction.classList.add("text-blue-950");
-      toToggle.forEach((el) => {
-        el.classList.add("text-white");
-        el.classList.remove("text-blue-950");
-      });
-      header.classList.remove("shadow");
-      menuIcon.classList.remove("text-blue-950");
-      menuIcon.classList.add("text-white");
-    };
-
+  useEffect(() => {
     const toggleMenu = () => {
       const isOpen = !isMenuOpen;
       setIsMenuOpen(isOpen);
+      const navcontent = document.getElementById("nav-content");
+      const menuPath = document.getElementById("menu-icon-path");
 
       if (isOpen) {
-        // Abrir menú
         navcontent.classList.remove("opacity-0", "invisible", "translate-x-full");
         navcontent.classList.add("opacity-100", "translate-x-0");
         setWhiteTheme();
-        // Cambiar a ícono X
         menuPath.setAttribute("d", "M4 4L16 16M4 16L16 4");
       } else {
-        // Cerrar menú
-        navcontent.classList.add("opacity-0", "invisible", "translate-x-full");
-        navcontent.classList.remove("opacity-100", "translate-x-0");
-        if (window.scrollY <= 10) {
-          setTransparentTheme();
-        }
-        // Volver a ícono hamburguesa
-        menuPath.setAttribute("d", "M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z");
+        closeMenu();
       }
     };
 
@@ -87,7 +104,6 @@ export default function Navbar() {
       }
     };
 
-    // Aplicar tema inicial
     onScroll();
 
     document.addEventListener("scroll", onScroll);
@@ -102,14 +118,14 @@ export default function Navbar() {
   return (
     <nav id="header" className="fixed w-screen z-30 top-0 text-white transition-colors duration-300">
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-5 lg:py-0">
-        <div className="pl-4 flex items-center">
+        <div className="pl-4 flex items-center z-50">
           <button
           onClick={home}
           id="brandname" className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl">
             Dunya Idiomas
           </button>
         </div>
-        <div className="block lg:hidden pr-4 z-20">
+        <div className="block lg:hidden pr-4 z-50">
           <button 
             id="nav-toggle"
             className="flex items-center p-1 hover:text-gray-200 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
@@ -134,8 +150,15 @@ export default function Navbar() {
             <ul className="list-reset flex flex-col lg:flex-row justify-center flex-1 items-center space-y-8 lg:space-y-0">
               <li className="mr-0 lg:mr-3">
                 <button 
-                onClick={nos}                
+                onClick={home}                
                 className="inline-block py-2 px-4 text-2xl lg:text-base font-bold no-underline text-blue-950 hover:text-blue-700">
+                  Inicio
+                </button>
+              </li>
+              <li className="mr-0 lg:mr-3">
+                <button 
+                onClick={nos}                
+                className="inline-block py-2 px-4 text-2xl lg:text-base no-underline text-blue-950 hover:text-blue-700">
                   Nosotros
                 </button>
               </li>

@@ -8,6 +8,8 @@ import Footer from "@/components/footer";
 import { WhatsAppIcon } from "@/components/icons";
 import { useRouter } from "next/navigation";
 
+
+
 const HERO_IMAGE = {
   src: "/hero.png",
   alt: "Estudantes aprendendo português em sala de aula, interagindo com professor",
@@ -63,36 +65,7 @@ const WhatsAppButton = () => (
   </a>
 );
 
-const HeroSection = () => (
-  <div className="pt-24">
-    <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-12">
-      <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-        <p className="uppercase tracking-loose w-full">Escola de Português</p>
-        <h1 className="my-4 text-5xl font-bold leading-tight">
-          Aprenda Português Conosco
-        </h1>
-        <p className="leading-normal text-2xl mb-8">
-          Descubra a riqueza da língua portuguesa com nossos cursos
-          personalizados para todos os níveis. Do básico ao avançado, você
-          alcançará a fluência que sempre desejou.
-        </p>
-        <button className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-          Agende Sua Aula
-        </button>
-      </div>
-      <div className="w-full md:w-3/5 py-6 text-center">
-        <Image
-          className="w-full md:w-4/5 z-50"
-          src={HERO_IMAGE.src}
-          alt={HERO_IMAGE.alt}
-          width={HERO_IMAGE.width}
-          height={HERO_IMAGE.height}
-          priority
-        />
-      </div>
-    </div>
-  </div>
-);
+
 
 const CoursesSection = () => (
   <section className="bg-white py-8">
@@ -116,6 +89,40 @@ export default function Home() {
   const handleContact = () => {
     router.push("/contact");
   };
+
+
+  const HeroSection = () => (
+    <div className="pt-24">
+      <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-12">
+        <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+          <p className="uppercase tracking-loose w-full">Escola de Português</p>
+          <h1 className="my-4 text-5xl font-bold leading-tight">
+            Aprenda Português Conosco
+          </h1>
+          <p className="leading-normal text-2xl mb-8">
+            Descubra a riqueza da língua portuguesa com nossos cursos
+            personalizados para todos os níveis. Do básico ao avançado, você
+            alcançará a fluência que sempre desejou.
+          </p>
+          <button 
+          onClick={handleContact}
+          className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            Contate-nos
+          </button>
+        </div>
+        <div className="w-full md:w-3/5 py-6 text-center">
+          <Image
+            className="w-full md:w-4/5 z-50"
+            src={HERO_IMAGE.src}
+            alt={HERO_IMAGE.alt}
+            width={HERO_IMAGE.width}
+            height={HERO_IMAGE.height}
+            priority
+          />
+        </div>
+      </div>
+    </div>
+  );
   return (
     <div className="leading-normal tracking-normal text-white gradient font-sans">
       <WhatsAppButton />

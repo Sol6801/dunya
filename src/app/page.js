@@ -92,7 +92,7 @@ export default function Home() {
 
 
   const HeroSection = () => (
-    <div className="pt-24">
+    <div className="pt-24 pb-8">
       <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-12">
         <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
           <p className="uppercase tracking-loose w-full">Escola de Português</p>
@@ -106,7 +106,7 @@ export default function Home() {
           </p>
           <button 
           onClick={handleContact}
-          className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          className="mx-auto lg:mx-0 text-blue-950 bg-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
             Contate-nos
           </button>
         </div>
@@ -127,7 +127,7 @@ export default function Home() {
     <div className="leading-normal tracking-normal text-white gradient font-sans">
       <WhatsAppButton />
       <Navbar />
-      <main className="bg-gradient-to-r from-[#000ec4] via-[#3c99d9] to-[#4eaec2]">
+      <main className="bg-gradient-to-r from-[#172554] via-[#3c99d9] to-[#74b3db]">
         <HeroSection />
         <div className="relative -mt-12 lg:-mt-24">
           <WaveSVG />
@@ -140,7 +140,7 @@ export default function Home() {
             </h3>
             <button
               onClick={handleContact}
-              className="bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-full py-3 px-6 mb-5 transition-all duration-300 ease-in-out"
+              className="bg-blue-950 hover:bg-sky-800 text-white font-bold rounded-full py-3 px-6 mb-5 transition-all duration-300 ease-in-out"
             >
               Contate-nos
             </button>

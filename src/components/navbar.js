@@ -1,12 +1,29 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { Globe } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function Navbar() {
   const router = useRouter();
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const locale = useLocale();
+  const t = useTranslations('Navigation');
 
+  const languages = [
+    { code: 'pt', label: 'Português' },
+    { code: 'es', label: 'Español' },
+    { code: 'en', label: 'English' }
+  ];
+
+  const handleLanguageChange = (langCode) => {
+    const currentPath = pathname.replace(`/${locale}`, '');
+    router.push(`/${langCode}${currentPath}`);
+    setIsLangMenuOpen(false);
+  };
   const closeMenu = () => {
     setIsMenuOpen(false);
     const navcontent = document.getElementById("nav-content");
@@ -135,6 +152,34 @@ export default function Navbar() {
             Dunya Idiomas
           </button>
         </div>
+
+        <div className="relative z-50 mx-4">
+          <button
+            onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
+          >
+            <Globe className="w-5 h-5" />
+            <span className="toggleColour">{languages.find(l => l.code === locale)?.label}</span>
+          </button>
+
+          {isLangMenuOpen && (
+            <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+              <div className="py-1">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+
         <div className="block lg:hidden pr-4 z-50">
           <button 
             id="nav-toggle"
@@ -162,21 +207,21 @@ export default function Navbar() {
                 <button 
                 onClick={home}                
                 className="nav-button inline-block py-2 px-4 text-2xl lg:text-base font-bold no-underline text-white hover:text-black">
-                  Inicio
+                  {t('home')}
                 </button>
               </li>
               <li className="mr-0 lg:mr-3">
                 <button 
                 onClick={nos}                
                 className="nav-button inline-block py-2 px-4 text-2xl lg:text-base no-underline text-white hover:text-black">
-                  Nosotros
+                  {t('about')}
                 </button>
               </li>
               <li className="mr-0 lg:mr-3">
                 <button 
                 onClick={exp}
                 className="nav-button inline-block no-underline text-2xl lg:text-base text-white hover:text-black py-2 px-4">
-                  Experiencia
+                  {t('experience')}
                 </button>
               </li>
             </ul>
@@ -185,7 +230,7 @@ export default function Navbar() {
               id="navAction"
               className="mx-auto lg:mx-0 hover:no-underline bg-white text-blue-950 font-bold rounded-full mt-8 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xl lg:text-base"
             >
-              Contacto
+              {t('contact')}
             </button>
           </div>
         </div>

@@ -153,31 +153,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="relative z-50 mx-4">
-          <button
-            onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
-          >
-            <Globe className="w-5 h-5" />
-            <span className="toggleColour">{languages.find(l => l.code === locale)?.label}</span>
-          </button>
-
-          {isLangMenuOpen && (
-            <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-              <div className="py-1">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => handleLanguageChange(lang.code)}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    {lang.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
 
 
         <div className="block lg:hidden pr-4 z-50">
@@ -203,6 +178,34 @@ export default function Navbar() {
         >
           <div className="container mx-auto h-full flex flex-col justify-center items-center lg:flex-row lg:justify-end lg:h-auto lg:py-5 py-8">
             <ul className="list-reset flex flex-col lg:flex-row justify-center flex-1 items-center space-y-8 lg:space-y-0">
+            <li>
+                
+                <div className="relative z-50 mx-4">
+                  <button
+                    onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                    className="flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
+                  >
+                    <Globe className="w-5 h-5" />
+                    <span className="toggleColour">{languages.find(l => l.code === locale)?.label}</span>
+                  </button>
+        
+                  {isLangMenuOpen && (
+                    <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                      <div className="py-1">
+                        {languages.map((lang) => (
+                          <button
+                            key={lang.code}
+                            onClick={() => handleLanguageChange(lang.code)}
+                            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            {lang.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+                      </li>
               <li className="mr-0 lg:mr-3">
                 <button 
                 onClick={home}                
@@ -224,6 +227,7 @@ export default function Navbar() {
                   {t('experience')}
                 </button>
               </li>
+
             </ul>
             <button
               onClick={handleContact}
@@ -232,6 +236,8 @@ export default function Navbar() {
             >
               {t('contact')}
             </button>
+
+            
           </div>
         </div>
       </div>

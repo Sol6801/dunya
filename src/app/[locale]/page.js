@@ -7,6 +7,7 @@ import ImageRight from "@/components/img-right";
 import Footer from "@/components/footer";
 import { WhatsAppIcon } from "@/components/icons";
 import { useRouter } from "next/navigation";
+import { useTranslations } from 'next-intl';
 
 
 
@@ -67,47 +68,50 @@ const WhatsAppButton = () => (
 
 
 
-const CoursesSection = () => (
-  <section className="bg-white py-8">
-    <div className="container max-w-5xl mx-auto m-8">
-      <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-blue-950">
-        Nossos Cursos
-      </h2>
-      <div className="w-full mb-4">
-        <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t" />
-      </div>
-      <a name="nos" className="relative -top-24"></a>
-      <ImageRight/>
-      <a name="exp" className="relative -top-24"></a>
-      <ImageLeft/>
-    </div>
-  </section>
-);
 
 export default function Home() {
+
+  
+
+  const t = useTranslations('Home');
   const router = useRouter();
   const handleContact = () => {
-    router.push("/contact");
+    router.push(`/${locale}/contact`);
   };
+  const CoursesSection = () => (
+    <section className="bg-white py-8">
+      <div className="container max-w-5xl mx-auto m-8">
+        <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-blue-950">
+          {t('courses')}
+        </h2>
+        <div className="w-full mb-4">
+          <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t" />
+        </div>
+        <a name="nos" className="relative -top-24"></a>
+        <ImageRight/>
+        <a name="exp" className="relative -top-24"></a>
+        <ImageLeft/>
+      </div>
+    </section>
+  );
+  
 
 
   const HeroSection = () => (
     <div className="pt-24 pb-8">
       <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-12">
         <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-          <p className="uppercase tracking-loose w-full">Escola de Português</p>
+          <p className="uppercase tracking-loose w-full">{t('school')}</p>
           <h1 className="my-4 text-5xl font-bold leading-tight">
-            Aprenda Português Conosco
+            {t('learning')}
           </h1>
           <p className="leading-normal text-2xl mb-8">
-            Descubra a riqueza da língua portuguesa com nossos cursos
-            personalizados para todos os níveis. Do básico ao avançado, você
-            alcançará a fluência que sempre desejou.
+            {t('description')}
           </p>
           <button 
           onClick={handleContact}
           className="mx-auto lg:mx-0 text-blue-950 bg-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-            Contate-nos
+            {t('contact us')}
           </button>
         </div>
         <div className="w-full md:w-3/5 py-6 text-center">
@@ -136,13 +140,13 @@ export default function Home() {
         <Footer>
           <div className="flex flex-col items-center justify-center">
             <h3 className="w-full my-2 text-3xl font-bold leading-tight text-center text-white pb-3">
-              ¿Gostaria de estudar conosco?
+              {t('study with us')}
             </h3>
             <button
               onClick={handleContact}
               className="bg-blue-950 hover:bg-sky-800 text-white font-bold rounded-full py-3 px-6 mb-5 transition-all duration-300 ease-in-out"
             >
-              Contate-nos
+              {t('contact us')}
             </button>
           </div>
         </Footer>

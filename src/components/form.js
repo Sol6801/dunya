@@ -1,14 +1,16 @@
 "use client"
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function Form() {
+  const t = useTranslations('Form');
     const [formData, setFormData] = useState({
-      nombre: '',
-      apellido: '',
+      name: '',
+      surname: '',
       email: '',
-      motivo: '',
-      mensaje: ''
+      motivation: '',
+      message: ''
     });
   
     const handleChange = (e) => {
@@ -22,17 +24,17 @@ export default function Form() {
     const handleSubmit = (e) => {
       e.preventDefault();
       
-      const mailtoLink = `mailto:dunya@gmail.com?subject=${encodeURIComponent(formData.motivo)}&body=${encodeURIComponent(
-        `Nombre: ${formData.nombre}
-  Apellido: ${formData.apellido}
+      const mailtoLink = `mailto:dunya@gmail.com?subject=${encodeURIComponent(formData.motivation)}&body=${encodeURIComponent(
+        `name: ${formData.name}
+  surname: ${formData.surname}
   Email: ${formData.email}
-  Motivo: ${formData.motivo}
+  motivation: ${formData.motivation}
   
-  Mensaje:
-  ${formData.mensaje}`
+  message:
+  ${formData.message}`
       )}`;
   
-      window.location.href = mailtoLink;
+      window.open(mailtoLink, '_blank');
     };
 
     return (
@@ -42,30 +44,30 @@ export default function Form() {
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
-            <label htmlFor="nombre" className="block text-left text-sm font-medium text-gray-700 mb-1">
-              Nombre
+            <label htmlFor="name" className="block text-left text-sm font-medium text-gray-700 mb-1">
+              {t('name')}
             </label>
             <input
               type="text"
-              id="nombre"
-              name="nombre"
-              value={formData.nombre}
+              id="name"
+              name="name"
+              value={formData.name}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
           <div className="flex-1">
-            <label htmlFor="apellido" className="block text-left text-sm font-medium text-gray-700 mb-1">
-              Apellido
+            <label htmlFor="surname" className="block text-left text-sm font-medium text-gray-700 mb-1">
+              {t('surname')}
             </label>
             <input
               type="text"
-              id="apellido"
-              name="apellido"
-              value={formData.apellido}
+              id="surname"
+              name="surname"
+              value={formData.surname}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -73,7 +75,7 @@ export default function Form() {
 
         <div>
           <label htmlFor="email" className="block text-left text-sm font-medium text-gray-700 mb-1">
-            Email
+            {t('email')}
           </label>
           <input
             type="email"
@@ -81,37 +83,37 @@ export default function Form() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="motivo" className="block text-left text-sm font-medium text-gray-700 mb-1">
-            Motivo de la consulta
+          <label htmlFor="motivation" className="block text-left text-sm font-medium text-gray-700 mb-1">
+            {t('motivation')}
           </label>
           <input
             type="text"
-            id="motivo"
-            name="motivo"
-            value={formData.motivo}
+            id="motivation"
+            name="motivation"
+            value={formData.motivation}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="mensaje" className="block text-left text-sm font-medium text-gray-700 mb-1">
-            Escriba su consulta
+          <label htmlFor="message" className="block text-left text-sm font-medium text-gray-700 mb-1">
+            {t('message')}
           </label>
           <textarea
-            id="mensaje"
-            name="mensaje"
+            id="message"
+            name="message"
             rows="4"
-            value={formData.mensaje}
+            value={formData.message}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           ></textarea>
         </div>
@@ -120,7 +122,7 @@ export default function Form() {
           type="submit"
           className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
         >
-          Enviar Consulta
+          {t('submit')}
         </button>
       </form>
     </div>

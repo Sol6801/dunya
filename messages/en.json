@@ -1,8 +1,41 @@
 {
-    "Navigation": {
-      "home": "Home",
-      "about": "About",
-      "experience": "Experience",
-      "contact": "Contact"
-    }
+  "Navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "Home": {
+    "courses": "Our Courses",
+    "school": "Portuguese School",
+    "learning": "Learn Portuguese with Us",
+    "description": "Discover the richness of the Portuguese language with our customised courses for all levels. From beginner to advanced, you will achieve the fluency you've always desired.",
+    "contact us": "Contact Us",
+    "study with us": "Would you like to study with us?"
+  },
+  "Right": {
+    "title": "About Us",
+    "description": "At our academy, we are passionate about teaching and sharing knowledge of the Portuguese language. With a team of qualified teachers and an effective teaching method, we aim to provide a personalised and engaging learning experience. Our goal is to help our students achieve their dreams, whether mastering Portuguese for professional opportunities, travel, or personal interest. Here, we value dedication, interaction, and the progress of each student in a welcoming and motivating environment. Come learn with us and discover a new world of possibilities!"
+  },
+  "Left": {
+    "title": "What would your experience with us be like?",
+    "description": "Studying at our Portuguese academy means diving into an enriching and practical experience. We offer dynamic classes tailored to all levels, with native teachers and updated materials to help you master the language naturally. Moreover, you will develop effective communication skills while exploring Brazilian and Portuguese culture in a welcoming and motivating environment. Join us and take the first step towards fluency in Portuguese!"
+  },
+  "Contact": {
+    "title": "Get in Touch",
+    "description": "Would you like to study with us? Contact us and get all your questions answered! We are here to help you take the first step in your journey to learning Portuguese.",
+    "info": "Contact Information",
+    "street": "example street, 123 - São Paulo, SP",
+    "email": "contact@escolaportugues.com",
+    "phone": "(11) 9999-9999",
+    "socials": "Social Networks"
+  },
+  "Form": {
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "motivation": "Reason for Inquiry",
+    "message": "Write your inquiry",
+    "submit": "Submit Inquiry"
   }
+}

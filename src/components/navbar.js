@@ -40,7 +40,7 @@ export default function Navbar() {
 
   const handleContact = () => {
     closeMenu();
-    router.push("/contact");
+    router.push(`/${locale}/contact`);
   };
   
   const nos = () => {

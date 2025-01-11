@@ -1,4 +1,6 @@
+import { useTranslations } from 'next-intl';
 export default function ImageLeft() {
+  const t = useTranslations('Left');
   return (
     <div className="flex flex-wrap flex-col-reverse sm:flex-row">
       
@@ -160,17 +162,10 @@ export default function ImageLeft() {
         <div className="align-middle">
           
           <h3 className="text-3xl text-blue-950 font-bold leading-none mb-3">
-            Como seria sua experiência conosco?
+            {t('title')}
           </h3>
           <p className="text-gray-600 mb-8">
-            Estudar na nossa academia de português é mergulhar em uma
-            experiência enriquecedora e prática. Oferecemos aulas dinâmicas
-            adaptadas a todos os níveis, com professores nativos e materiais
-            atualizados que te ajudarão a dominar o idioma de forma natural.
-            Além disso, você desenvolverá habilidades de comunicação eficaz
-            enquanto explora a cultura brasileira e portuguesa em um ambiente
-            acolhedor e motivador. Junte-se a nós e dê o primeiro passo rumo à
-            fluência em português!
+            {t('description')}
           </p>
         </div>
       </div>

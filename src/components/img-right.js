@@ -1,21 +1,15 @@
+import { useTranslations } from 'next-intl';
 export default function ImageRight() {
+  const t = useTranslations('Right');
   return (
     <div className="flex flex-wrap">
       <div className="w-5/6 sm:w-1/2 p-6">
       
         <h3 className="text-3xl text-blue-950 font-bold leading-none mb-3">
-        Sobre Nós
+        {t('title')}
         </h3>
         <p className="text-gray-600 mb-8">
-          Na nossa academia, somos apaixonados por ensinar e por
-          compartilhar o conhecimento do idioma português. Com uma equipe de
-          professores qualificados e um método de ensino eficaz, buscamos
-          oferecer uma experiência de aprendizado personalizada e envolvente.
-          Nosso objetivo é ajudar nossos alunos a alcançar seus sonhos, seja
-          dominar o português para oportunidades profissionais, viagens ou
-          interesse pessoal. Aqui, valorizamos a dedicação, a interação e o
-          progresso de cada aluno em um ambiente acolhedor e motivador. Venha
-          aprender conosco e descubra um novo mundo de possibilidades!
+          {t('description')}
         </p>
       </div>
       <div className="w-full sm:w-1/2 p-6">

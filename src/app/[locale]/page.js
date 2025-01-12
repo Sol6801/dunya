@@ -69,11 +69,9 @@ const WhatsAppButton = () => (
 
 
 
-export default function Home() {
-
-  
-
+export default function Home({params}) {
   const t = useTranslations('Home');
+  const locale = params?.locale;
   const router = useRouter();
   const handleContact = () => {
     router.push(`/${locale}/contact`);

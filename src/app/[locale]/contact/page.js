@@ -4,6 +4,7 @@ import Form from "@/components/form";
 import { WhatsAppIcon, InstagramIcon, FacebookIcon, LinkedInIcon } from "@/components/icons";
 import { useTranslations } from 'next-intl';
 
+
 const SocialIcon = ({ children, href, label }) => (
   <a
     href={href}
@@ -13,6 +14,18 @@ const SocialIcon = ({ children, href, label }) => (
     aria-label={label}
   >
     {children}
+  </a>
+);
+
+const WhatsAppButton = () => (
+  <a
+    href="https://www.whatsapp.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 ease-in-out z-50 flex items-center justify-center"
+    aria-label="Contactar por WhatsApp"
+  >
+    <WhatsAppIcon className="h-8 w-8" />
   </a>
 );
 
@@ -81,6 +94,7 @@ export default function Contact() {
   );
   return (
     <div className="leading-normal tracking-normal text-white gradient font-sans">
+      <WhatsAppButton />
       <Navbar />
       <main className="bg-gradient-to-r from-[#172554] via-[#3c99d9] to-[#74b3db]">
         <div className="container mx-auto px-4 pt-28">

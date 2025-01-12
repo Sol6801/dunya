@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 import { WhatsAppIcon } from "@/components/icons";
 import { useRouter } from "next/navigation";
 import { useTranslations } from 'next-intl';
+import { use } from "react";
 
 
 
@@ -69,9 +70,11 @@ const WhatsAppButton = () => (
 
 
 
-export default function Home({params}) {
-  const t = useTranslations('Home');
+export default function Home({ params: paramsPromise }) {
+  const t = useTranslations("Home");
+  const params = use(paramsPromise); 
   const locale = params?.locale;
+
   const router = useRouter();
   const handleContact = () => {
     router.push(`/${locale}/contact`);

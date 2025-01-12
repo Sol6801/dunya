@@ -175,7 +175,7 @@ export default function Navbar() {
 
 
 
-        <div className="block lg:hidden pr-4 z-50">
+        <div className="block lg:hidden pr-5 z-50">
           <button 
             id="nav-toggle"
             className="flex items-center p-1 hover:text-gray-200 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
@@ -250,8 +250,6 @@ export default function Navbar() {
               <span className="toggleColour">{t('experience')}</span>
             </button>
               </li>
-
-            </ul>
             <button
               onClick={handleContact}
               id="navAction"
@@ -259,6 +257,8 @@ export default function Navbar() {
             >
               {t('contact')}
             </button>
+
+            </ul>
 
             
           </div>

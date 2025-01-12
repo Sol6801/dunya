@@ -40,7 +40,7 @@ export default function Form() {
     return (
     <section className="container mx-auto text-center py-6 px-5"> 
     <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-cyan-700">Contáctanos</h2>
+      <h2 className="text-2xl font-bold mb-6 text-blue-950">Contáctanos</h2>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
@@ -53,7 +53,7 @@ export default function Form() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-950"
               required
             />
           </div>
@@ -67,7 +67,7 @@ export default function Form() {
               name="surname"
               value={formData.surname}
               onChange={handleChange}
-              className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-950"
               required
             />
           </div>
@@ -83,7 +83,7 @@ export default function Form() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-950"
             required
           />
         </div>
@@ -98,7 +98,7 @@ export default function Form() {
             name="motivation"
             value={formData.motivation}
             onChange={handleChange}
-            className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-950"
             required
           />
         </div>
@@ -113,14 +113,14 @@ export default function Form() {
             rows="4"
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-950"
             required
           ></textarea>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+          className="w-full bg-blue-950 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-800 transition-colors duration-300"
         >
           {t('submit')}
         </button>

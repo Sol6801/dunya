@@ -64,6 +64,8 @@ export default function Navbar() {
     const toToggle = document.querySelectorAll(".toggleColour");
     const menuIcon = document.getElementById("menu-icon");
     const navButtons = document.querySelectorAll(".nav-button");
+    const globeIcon = document.querySelector(".globe-icon");
+    const hoverElements = document.querySelectorAll(".hover-bg");
     
     header.classList.add("bg-white");
     navaction.classList.remove("bg-white");
@@ -77,6 +79,14 @@ export default function Navbar() {
       el.classList.add("text-blue-950");
       el.classList.remove("text-white");
     });
+    if (globeIcon) {
+      globeIcon.classList.add("text-blue-950");
+      globeIcon.classList.remove("text-white");
+    }
+    hoverElements.forEach((el) => {
+      el.classList.remove("hover:bg-white/10");
+      el.classList.add("hover:bg-blue-700/10");
+    });
     header.classList.add("shadow");
     menuIcon.classList.add("text-blue-950");
     menuIcon.classList.remove("text-white");
@@ -88,6 +98,8 @@ export default function Navbar() {
     const toToggle = document.querySelectorAll(".toggleColour");
     const menuIcon = document.getElementById("menu-icon");
     const navButtons = document.querySelectorAll(".nav-button");
+    const globeIcon = document.querySelector(".globe-icon");
+    const hoverElements = document.querySelectorAll(".hover-bg");
     
     header.classList.remove("bg-white");
     navaction.classList.add("bg-white");
@@ -100,6 +112,14 @@ export default function Navbar() {
     navButtons.forEach((el) => {
       el.classList.add("text-white");
       el.classList.remove("text-blue-950");
+    });
+    if (globeIcon) {
+      globeIcon.classList.add("text-white");
+      globeIcon.classList.remove("text-blue-950");
+    }
+    hoverElements.forEach((el) => {
+      el.classList.remove("hover:bg-blue-700/10");
+      el.classList.add("hover:bg-white/10");
     });
     header.classList.remove("shadow");
     menuIcon.classList.remove("text-blue-950");
@@ -183,9 +203,9 @@ export default function Navbar() {
                 <div className="relative z-50 mx-4">
                   <button
                     onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                    className="flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
+                    className="hover-bg flex items-center space-x-2 p-2 rounded-lg font-bold  hover:bg-white/10 transition-colors duration-300"
                   >
-                    <Globe className="w-5 h-5" />
+                    <Globe className="globe-icon w-5 h-5 transition-colors duration-300" />
                     <span className="toggleColour">{languages.find(l => l.code === locale)?.label}</span>
                   </button>
         
@@ -207,25 +227,28 @@ export default function Navbar() {
                 </div>
                       </li>
               <li className="mr-0 lg:mr-3">
-                <button 
-                onClick={home}                
-                className="nav-button inline-block py-2 px-4 text-2xl lg:text-base font-bold no-underline text-white hover:text-black">
-                  {t('home')}
-                </button>
+              <button 
+              onClick={home}                
+              className="hover-bg nav-button flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
+            >
+              <span className="toggleColour">{t('home')}</span>
+            </button>
               </li>
               <li className="mr-0 lg:mr-3">
-                <button 
-                onClick={nos}                
-                className="nav-button inline-block py-2 px-4 text-2xl lg:text-base no-underline text-white hover:text-black">
-                  {t('about')}
-                </button>
+              <button 
+              onClick={nos}                
+              className="hover-bg nav-button flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
+            >
+              <span className="toggleColour">{t('about')}</span>
+            </button>
               </li>
               <li className="mr-0 lg:mr-3">
-                <button 
-                onClick={exp}
-                className="nav-button inline-block no-underline text-2xl lg:text-base text-white hover:text-black py-2 px-4">
-                  {t('experience')}
-                </button>
+              <button 
+              onClick={exp}
+              className="hover-bg nav-button flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
+            >
+              <span className="toggleColour">{t('experience')}</span>
+            </button>
               </li>
 
             </ul>

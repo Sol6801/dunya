@@ -2,7 +2,6 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing.js';
-import Head from 'next/head';
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -19,10 +18,13 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Dunya Idiomas",
-  description: "Learn portuguese, aprende portugues"
+  description: "Learn portuguese, aprende portugues",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
+
 export default async function LocaleLayout({ children, params }) {
-  // Asegúrate de que `params` esté resuelto antes de acceder a sus propiedades
   const resolvedParams = await params;
   const { locale } = resolvedParams;
 
@@ -36,11 +38,6 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-            <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

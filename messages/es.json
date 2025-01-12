@@ -37,5 +37,9 @@
     "motivation": "Motivo de la consulta",
     "message": "Escribe tu consulta",
     "submit": "Enviar Consulta"
-  }
+  },
+    "Footer": {
+      "rights": "© 2025 Escuela de Español. Todos los derechos reservados."
+    }
 }
+

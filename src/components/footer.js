@@ -1,8 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import {useTranslations} from 'next-intl';
 
 export default function Footer({ children }) {
+  const t = useTranslations('Footer');
   const router = useRouter();
   const handleContact = () => {
     router.push("/contact");
@@ -43,9 +45,9 @@ export default function Footer({ children }) {
       </svg>
 
       <div className="container mx-auto text-center">
-        {children /* Renderiza componentes dinámicos aquí */}
+        {children}
         <p className="text-lg pb-5">
-          © 2025 Escola de Português. Todos os direitos reservados.
+          {t('rights')}
         </p>
       </div>
     </div>

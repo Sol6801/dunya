@@ -196,7 +196,7 @@ export default function Navbar() {
           id="nav-content" 
           className="fixed top-0 right-0 h-screen w-full lg:w-auto lg:h-auto lg:relative lg:flex lg:items-center invisible opacity-0 translate-x-full lg:translate-x-0 lg:opacity-100 lg:visible bg-white lg:bg-transparent transition-all duration-300 ease-in-out transform"
         >
-          <div className="container mx-auto h-full flex flex-col justify-center items-center lg:flex-row lg:justify-end lg:h-auto lg:py-5 py-8">
+          <div className="container mx-auto h-full flex flex-col justify-center items-center lg:flex-row lg:justify-end lg:h-auto lg:py-5 py-8 lg:px-5">
             <ul className="list-reset flex flex-col lg:flex-row justify-center flex-1 items-center space-y-8 lg:space-y-0">
             <li>
                 

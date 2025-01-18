@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from "next/navigation";
 import { Globe } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const [isWhiteTheme, setIsWhiteTheme] = useState(false);
   const locale = useLocale();
   const t = useTranslations('Navigation');
 
@@ -59,6 +61,7 @@ export default function Navbar() {
   };
 
   const setWhiteTheme = () => {
+    setIsWhiteTheme(true);
     const header = document.getElementById("header");
     const navaction = document.getElementById("navAction");
     const toToggle = document.querySelectorAll(".toggleColour");
@@ -93,6 +96,7 @@ export default function Navbar() {
   };
 
   const setTransparentTheme = () => {
+    setIsWhiteTheme(false);
     const header = document.getElementById("header");
     const navaction = document.getElementById("navAction");
     const toToggle = document.querySelectorAll(".toggleColour");
@@ -165,11 +169,19 @@ export default function Navbar() {
   return (
     <nav id="header" className="fixed w-screen z-30 top-0 text-white transition-colors duration-300">
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-5 lg:py-0">
-        <div className="pl-4 flex items-center z-50">
-          <button
+
+      <div className="flex flex-1 items-center justify-center lg:justify-start pl-4 z-50">
+        <button
           onClick={home}
-          id="brandname" className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl">
-            Dunya Idiomas
+          id="brandname" className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex flex-row items-center justify-between gap-2">
+            <Image
+              src={isWhiteTheme ? '/logo.png' : '/logo2.png'}
+              alt="Dunya Idiomas"
+              width={70}
+              height={70}
+            />
+            <p className="whitespace-pre text-3xl">Dunya{'\n'}Idiomas</p>
+
           </button>
         </div>
 

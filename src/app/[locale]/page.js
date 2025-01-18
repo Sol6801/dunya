@@ -99,10 +99,12 @@ export default function Home({ params: paramsPromise }) {
 
 
   const HeroSection = () => (
-    <div className="pt-24 pb-8">
-      <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-12">
+    <div className="pt-24 pb:8 lg:pt-10 lg:pb-2">
+      <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-12 lg:my-0.2">
         <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-          <p className="uppercase tracking-loose w-full">{t('school')}</p>
+          <p className="uppercase tracking-loose w-full">
+            {t('school')}
+            </p>
           <h1 className="my-4 text-5xl font-bold leading-tight">
             {t('learning')}
           </h1>

@@ -11,7 +11,8 @@
     "learning": "Aprende Español con Nosotros",
     "description": "Descubre la riqueza del idioma español con nuestros cursos personalizados para todos los niveles. Desde básico hasta avanzado, alcanzarás la fluidez que siempre has deseado.",
     "contact us": "Contáctanos",
-    "study with us": "¿Te gustaría estudiar con nosotros?"
+    "study with us": "¿Te gustaría estudiar con nosotros?",
+    "whatsapp": "https://wa.me/5522981455537?text=Estoy%20interesado%20en%20aprender%20español"
   },
   "Right": {
     "title": "Sobre Nosotros",
@@ -24,10 +25,11 @@
   "Contact": {
     "title": "Ponte en Contacto",
     "description": "¿Te gustaría estudiar con nosotros? ¡Contáctanos y resuelve todas tus dudas! Estamos aquí para ayudarte a dar el primer paso en tu camino de aprendizaje del español.",
+    "whatsapp": "https://wa.me/5522981455537?text=Estoy%20interesado%20en%20aprender%20español",
     "info": "Información de Contacto",
     "street": "calle ejemplo, 123 - São Paulo, SP",
-    "email": "contacto@escolaportugues.com",
-    "phone": "(11) 9999-9999",
+    "email": "Email",
+    "phone": "Telefono",
     "socials": "Redes Sociales"
   },
   "Form": {

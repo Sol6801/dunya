@@ -17,17 +17,6 @@ const SocialIcon = ({ children, href, label }) => (
   </a>
 );
 
-const WhatsAppButton = () => (
-  <a
-    href="https://www.whatsapp.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 ease-in-out z-50 flex items-center justify-center"
-    aria-label="Contactar por WhatsApp"
-  >
-    <WhatsAppIcon className="h-8 w-8" />
-  </a>
-);
 
 const WaveSVG = () => (
     <svg viewBox="0 0 1428 174" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
@@ -47,6 +36,17 @@ const WaveSVG = () => (
 
 export default function Contact() {
   const t = useTranslations('Contact');
+  const WhatsAppButton = () => (
+    <a
+      href={t('whatsapp')}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 ease-in-out z-50 flex items-center justify-center"
+      aria-label="Contactar por WhatsApp"
+    >
+      <WhatsAppIcon className="h-8 w-8" />
+    </a>
+  );
   const ContactInfo = () => (
     <div className="p-6 bg-white text-blue-950 mx-auto">
       <h3 className="text-3xl font-bold mb-6">{t('info')}</h3>

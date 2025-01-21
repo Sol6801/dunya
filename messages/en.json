@@ -11,7 +11,8 @@
     "learning": "Learn Spanish with Us",
     "description": "Discover the richness of the Spanish language with our customised courses for all levels. From beginner to advanced, you will achieve the fluency you've always desired.",
     "contact us": "Contact Us",
-    "study with us": "Would you like to study with us?"
+    "study with us": "Would you like to study with us?",
+    "whatsapp": "https://wa.me/123?text=I'm%20interested%20in%20learning%20Spanish"
   },
   "Right": {
     "title": "About Us",
@@ -24,10 +25,11 @@
   "Contact": {
     "title": "Get in Touch",
     "description": "Would you like to study with us? Contact us and get all your questions answered! We are here to help you take the first step in your journey to learning Spanish.",
+    "whatsapp": "https://wa.me/123?text=I'm%20interested%20in%20learning%20Spanish",
     "info": "Contact Information",
     "street": "example street, 123 - São Paulo, SP",
-    "email": "contact@escolaportugues.com",
-    "phone": "(11) 9999-9999",
+    "email": "Email",
+    "phone": "Phone",
     "socials": "Social Networks"
   },
   "Form": {

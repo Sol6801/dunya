@@ -29,7 +29,7 @@ export default function Form() {
     const handleSubmit = (e) => {
       e.preventDefault();
       
-      const mailtoLink = `mailto:dunya@gmail.com?subject=${encodeURIComponent(formData.motivation)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:dunyaidiomas@gmail.com?subject=${encodeURIComponent(formData.motivation)}&body=${encodeURIComponent(
         `name: ${formData.name}
   surname: ${formData.surname}
   Email: ${formData.email}

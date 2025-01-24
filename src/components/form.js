@@ -1,10 +1,15 @@
 "use client"
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
 export default function Form() {
-  const t = useTranslations('Form');
+  const pathname = usePathname();
+  // Get the current locale from the URL path
+  const currentLocale = pathname.split('/')[1];
+  const messages = require(`../../messages/${currentLocale}.json`);
+  const t = messages.Form;
+
     const [formData, setFormData] = useState({
       name: '',
       surname: '',
@@ -45,7 +50,7 @@ export default function Form() {
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
             <label htmlFor="name" className="block text-left text-sm font-medium text-gray-700 mb-1">
-              {t('name')}
+              {t.name}
             </label>
             <input
               type="text"
@@ -59,7 +64,7 @@ export default function Form() {
           </div>
           <div className="flex-1">
             <label htmlFor="surname" className="block text-left text-sm font-medium text-gray-700 mb-1">
-              {t('surname')}
+              {t.surname}
             </label>
             <input
               type="text"
@@ -75,7 +80,7 @@ export default function Form() {
 
         <div>
           <label htmlFor="email" className="block text-left text-sm font-medium text-gray-700 mb-1">
-            {t('email')}
+            {t.email}
           </label>
           <input
             type="email"
@@ -90,7 +95,7 @@ export default function Form() {
 
         <div>
           <label htmlFor="motivation" className="block text-left text-sm font-medium text-gray-700 mb-1">
-            {t('motivation')}
+            {t.motivation}
           </label>
           <input
             type="text"
@@ -105,7 +110,7 @@ export default function Form() {
 
         <div>
           <label htmlFor="message" className="block text-left text-sm font-medium text-gray-700 mb-1">
-            {t('message')}
+            {t.message}
           </label>
           <textarea
             id="message"
@@ -122,7 +127,7 @@ export default function Form() {
           type="submit"
           className="w-full bg-blue-950 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-800 transition-colors duration-300"
         >
-          {t('submit')}
+          {t.submit}
         </button>
       </form>
     </div>

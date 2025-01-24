@@ -1,15 +1,12 @@
-"use client";
-
+'use client';
 import Image from "next/image";
 import Navbar from "@/components/navbar";
 import ImageLeft from "@/components/img-left";
 import ImageRight from "@/components/img-right";
 import Footer from "@/components/footer";
 import { WhatsAppIcon } from "@/components/icons";
-import { useRouter } from "next/navigation";
-import { useTranslations } from 'next-intl';
-import { use } from "react";
-
+import Link from 'next/link';
+import { usePathname } from "next/navigation";
 
 
 const HERO_IMAGE = {
@@ -55,15 +52,17 @@ const WaveSVG = () => (
   </svg>
 );
 
+export default function Home() {  
 
+  const pathname = usePathname();
+  
+  const currentLocale = pathname.split('/')[1];
+  const messages = require(`../../../../messages/${currentLocale}.json`);
+  const t = messages.Home;
 
-
-
-export default function Home({ params: paramsPromise }) {
-  const t = useTranslations("Home");
   const WhatsAppButton = () => (
     <a
-      href={t('whatsapp')}
+      href={t.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 ease-in-out z-50 flex items-center justify-center"
@@ -72,18 +71,12 @@ export default function Home({ params: paramsPromise }) {
       <WhatsAppIcon className="h-8 w-8" />
     </a>
   );
-  const params = use(paramsPromise); 
-  const locale = params?.locale;
 
-  const router = useRouter();
-  const handleContact = () => {
-    router.push(`/${locale}/contact`);
-  };
   const CoursesSection = () => (
     <section className="bg-white py-8">
       <div className="container max-w-5xl mx-auto m-8">
         <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-blue-950">
-          {t('courses')}
+          {t.courses}
         </h2>
         <div className="w-full mb-4">
           <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t" />
@@ -95,27 +88,26 @@ export default function Home({ params: paramsPromise }) {
       </div>
     </section>
   );
-  
-
 
   const HeroSection = () => (
     <div className="pt-24 pb:8 lg:pt-12 lg:pb-2">
       <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-12 lg:my-0.2">
         <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
           <p className="uppercase tracking-loose w-full">
-            {t('school')}
-            </p>
+            {t.school}
+          </p>
           <h1 className="my-4 text-5xl font-bold leading-tight">
-            {t('learning')}
+            {t.learning}
           </h1>
           <p className="leading-normal text-2xl mb-8">
-            {t('description')}
+            {t.description}
           </p>
-          <button 
-          onClick={handleContact}
-          className="mx-auto lg:mx-0 text-blue-950 bg-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-            {t('contact us')}
-          </button>
+          <Link
+            href="/es/contact"
+            className="mx-auto lg:mx-0 text-blue-950 bg-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+          >
+            {t.contactus}
+          </Link>
         </div>
         <div className="w-full md:w-3/5 py-6 text-center">
           <Image
@@ -130,6 +122,7 @@ export default function Home({ params: paramsPromise }) {
       </div>
     </div>
   );
+
   return (
     <div className="leading-normal tracking-normal text-white gradient font-sans">
       <WhatsAppButton />
@@ -143,14 +136,14 @@ export default function Home({ params: paramsPromise }) {
         <Footer>
           <div className="flex flex-col items-center justify-center">
             <h3 className="w-full my-2 text-3xl font-bold leading-tight text-center text-white pb-3">
-              {t('study with us')}
+              {t.studywithus}
             </h3>
-            <button
-              onClick={handleContact}
+            <Link
+              href="/es/contact"
               className="bg-blue-950 hover:bg-sky-800 text-white font-bold rounded-full py-3 px-6 mb-5 transition-all duration-300 ease-in-out"
             >
-              {t('contact us')}
-            </button>
+              {t.contactus}
+            </Link>
           </div>
         </Footer>
       </main>

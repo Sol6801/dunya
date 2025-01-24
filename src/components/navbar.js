@@ -3,30 +3,44 @@
 import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from "next/navigation";
 import { Globe } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useCallback } from 'react';
 
 export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
+    // Get the current locale from the URL path
+    const currentLocale = pathname.split('/')[1];
+    const messages = require(`../../messages/${currentLocale}.json`);
+    const t = messages.Navigation;
+  
+    
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [isWhiteTheme, setIsWhiteTheme] = useState(false);
-  const locale = useLocale();
-  const t = useTranslations('Navigation');
-
+  
+  
   const languages = [
     { code: 'pt', label: 'Português' },
     { code: 'es', label: 'Español' },
     { code: 'en', label: 'English' }
   ];
+  
+  
 
   const handleLanguageChange = (langCode) => {
-    const currentPath = pathname.replace(`/${locale}`, '');
-    router.push(`/${langCode}${currentPath}`);
+    // Extract the current path without the locale
+    const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/';
+    
+    // Construct the new path with the selected language
+    const newPath = `/${langCode}${pathWithoutLocale}`;
+    
+    router.push(newPath);
     setIsLangMenuOpen(false);
   };
-  const closeMenu = () => {
+  
+
+  const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
     const navcontent = document.getElementById("nav-content");
     const menuPath = document.getElementById("menu-icon-path");
@@ -38,27 +52,28 @@ export default function Navbar() {
       setTransparentTheme();
     }
     menuPath.setAttribute("d", "M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z");
-  };
+  },[]);
 
   const handleContact = () => {
     closeMenu();
-    router.push(`/${locale}/contact`);
+    router.push(`/${currentLocale}/contact`);
   };
   
   const nos = () => {
     closeMenu();
-    router.push("/#nos");
+    router.push(`/${currentLocale}/#nos`);
   };
   
   const exp = () => {
     closeMenu();
-    router.push("/#exp");
+    router.push(`/${currentLocale}/#exp`);
   };
   
   const home = () => {
     closeMenu();
-    router.push("/");
+    router.push(`/${currentLocale}`);
   };
+
 
   const setWhiteTheme = () => {
     setIsWhiteTheme(true);
@@ -164,7 +179,7 @@ export default function Navbar() {
       document.removeEventListener("scroll", onScroll);
       document.getElementById("nav-toggle").removeEventListener("click", toggleMenu);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, closeMenu]);
 
   return (
     <nav id="header" className="fixed w-screen z-30 top-0 text-white transition-colors duration-300">
@@ -218,7 +233,7 @@ export default function Navbar() {
                     className="hover-bg flex items-center space-x-2 p-2 rounded-lg font-bold  hover:bg-white/10 transition-colors duration-300"
                   >
                     <Globe className="globe-icon w-5 h-5 transition-colors duration-300" />
-                    <span className="toggleColour">{languages.find(l => l.code === locale)?.label}</span>
+                    <span className="toggleColour">{languages.find(l => l.code === currentLocale)?.label}</span>
                   </button>
         
                   {isLangMenuOpen && (
@@ -243,7 +258,7 @@ export default function Navbar() {
               onClick={home}                
               className="hover-bg nav-button flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
             >
-              <span className="toggleColour">{t('home')}</span>
+              <span className="toggleColour">{t.home}</span>
             </button>
               </li>
               <li className="mr-0 lg:mr-3">
@@ -251,7 +266,7 @@ export default function Navbar() {
               onClick={nos}                
               className="hover-bg nav-button flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
             >
-              <span className="toggleColour">{t('about')}</span>
+              <span className="toggleColour">{t.about}</span>
             </button>
               </li>
               <li className="mr-0 lg:mr-3">
@@ -259,7 +274,7 @@ export default function Navbar() {
               onClick={exp}
               className="hover-bg nav-button flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
             >
-              <span className="toggleColour">{t('experience')}</span>
+              <span className="toggleColour">{t.experience}</span>
             </button>
               </li>
             <button
@@ -267,7 +282,7 @@ export default function Navbar() {
               id="navAction"
               className="mx-auto lg:mx-0 hover:no-underline bg-white text-blue-950 font-bold rounded-full mt-8 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xl lg:text-base"
             >
-              {t('contact')}
+              {t.contact}
             </button>
 
             </ul>

@@ -1,10 +1,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {useTranslations} from 'next-intl';
+import { usePathname } from "next/navigation";
 
-export default function Footer({ children }) {
-  const t = useTranslations('Footer');
+export default function Footer({ children }) {  
+  const pathname = usePathname();  
+  const currentLocale = pathname.split('/')[1];
+  const messages = require(`../../messages/${currentLocale}.json`);
+  const t = messages.Home;
   const router = useRouter();
   const handleContact = () => {
     router.push("/contact");
@@ -47,7 +50,7 @@ export default function Footer({ children }) {
       <div className="container mx-auto text-center">
         {children}
         <p className="text-lg pb-5">
-          {t('rights')}
+          {t.rights}
         </p>
       </div>
     </div>

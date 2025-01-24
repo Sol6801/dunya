@@ -1,6 +1,12 @@
-import { useTranslations } from 'next-intl';
+'use client'
+import { usePathname } from "next/navigation";
+
 export default function ImageLeft() {
-  const t = useTranslations('Left');
+  const pathname = usePathname();
+  // Get the current locale from the URL path
+  const currentLocale = pathname.split('/')[1];
+  const messages = require(`../../messages/${currentLocale}.json`);
+  const t = messages.Left;
   return (
     <div className="flex flex-wrap flex-col-reverse sm:flex-row">
       
@@ -162,10 +168,10 @@ export default function ImageLeft() {
         <div className="align-middle">
           
           <h3 className="text-3xl text-blue-950 font-bold leading-none mb-3">
-            {t('title')}
+            {t.title}
           </h3>
           <p className="text-gray-600 mb-8">
-            {t('description')}
+            {t.description}
           </p>
         </div>
       </div>

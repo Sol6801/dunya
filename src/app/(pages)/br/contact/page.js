@@ -1,9 +1,9 @@
+'use client';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Form from "@/components/form";
 import { WhatsAppIcon, InstagramIcon, FacebookIcon, LinkedInIcon } from "@/components/icons";
-import { useTranslations } from 'next-intl';
-
+import { usePathname } from "next/navigation";
 
 const SocialIcon = ({ children, href, label }) => (
   <a
@@ -35,10 +35,15 @@ const WaveSVG = () => (
 
 
 export default function Contact() {
-  const t = useTranslations('Contact');
+  const pathname = usePathname();
+  
+  const currentLocale = pathname.split('/')[1];
+  const messages = require(`../../../../../messages/${currentLocale}.json`);
+  const t = messages.Contact;
+
   const WhatsAppButton = () => (
     <a
-      href={t('whatsapp')}
+      href={t.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 ease-in-out z-50 flex items-center justify-center"
@@ -49,7 +54,7 @@ export default function Contact() {
   );
   const ContactInfo = () => (
     <div className="p-6 bg-white text-blue-950 mx-auto">
-      <h3 className="text-3xl font-bold mb-6">{t('info')}</h3>
+      <h3 className="text-3xl font-bold mb-6">{t.info}</h3>
       <div className="space-y-4">
         {/* <p className="flex items-center">
           <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,13 +67,13 @@ export default function Contact() {
           <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
-          {t('email')}
+          {t.email}
         </p>
         <p className="flex items-center">
           <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
           </svg>
-          {t('phone')}
+          {t.phone}
         </p>
       </div>
       <div>
@@ -98,8 +103,8 @@ export default function Contact() {
       <Navbar />
       <main className="bg-gradient-to-r from-[#172554] via-[#3c99d9] to-[#74b3db]">
         <div className="container mx-auto px-4 pt-32">
-          <h1 className="text-5xl font-bold text-center mb-12">{t('title')}</h1>
-          <p className="leading-normal tracking-normal text-center text-xl mb-8 lg:mx-32 mx-3">{t('description')}</p>
+          <h1 className="text-5xl font-bold text-center mb-12">{t.title}</h1>
+          <p className="leading-normal tracking-normal text-center text-xl mb-8 lg:mx-32 mx-3">{t.description}</p>
 
         </div>
         <WaveSVG /> 

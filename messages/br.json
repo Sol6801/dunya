@@ -36,8 +36,14 @@
     "name": "Nome",
     "surname": "Sobrenome",
     "email": "Email",
-    "motivation": "Motivo de la consulta",
-    "message": "Escreva sua consulta",
+    "motivation": "Motivo da consulta",
+    "empresarial": "Empresarial",
+    "private": "Particular",
+    "travel": "Viagem",
+    "pleasure": "Lazer",
+    "others": "Outros",
+    "selectMotivation": "Selecione uma Motivação",
+    "message": "Comentarios",
     "submit": "Enviar Consulta"
   },
     "Footer": {

@@ -37,7 +37,13 @@
     "surname": "Surname",
     "email": "Email",
     "motivation": "Reason for Inquiry",
-    "message": "Write your inquiry",
+    "empresarial": "Empresarial",
+    "private": "Private",
+    "travel": "Travel",
+    "pleasure": "Pleasure",
+    "others": "Others", 
+    "selectMotivation": "Select Motivation",
+    "message": "Comments",
     "submit": "Submit Inquiry"
   },
   "Footer": {

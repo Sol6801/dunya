@@ -37,7 +37,13 @@
     "surname": "Apellido",
     "email": "Correo Electrónico",
     "motivation": "Motivo de la consulta",
-    "message": "Escribe tu consulta",
+    "empresarial": "Empresarial",
+    "private": "Particular",
+    "travel": "Viaje",
+    "pleasure": "Salud",
+    "others": "Otros", 
+    "selectMotivation": "Seleccione un Motivo",
+    "message": "Comentarios",
     "submit": "Enviar Consulta"
   },
     "Footer": {

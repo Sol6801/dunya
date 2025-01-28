@@ -76,7 +76,7 @@ const geistMono = localFont({
 
 export const metadata = {
   title: 'Dunya Idiomas',
-  description: 'Learn portuguese, aprende portugues',
+  description: 'Learn spanish, aprende espanhol',
   icons: {
     icon: '/favicon.ico',
   },

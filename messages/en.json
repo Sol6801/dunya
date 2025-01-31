@@ -16,7 +16,7 @@
   },
   "Right": {
     "title": "About Us",
-    "description": "At our academy, we are passionate about teaching and sharing knowledge of the Spanish language. With a team of qualified teachers and an effective teaching method, we aim to provide a personalised and engaging learning experience. Our goal is to help our students achieve their dreams, whether mastering Spanish for professional opportunities, travel, or personal interest. Here, we value dedication, interaction, and the progress of each student in a welcoming and motivating environment. Come learn with us and discover a new world of possibilities!"
+    "description": "At our academy, we are passionate about teaching and sharing knowledge of the Spanish language. With a team of qualified teachers and an effective teaching method, we aim to provide a personalised and engaging learning experience. Our goal is to help our students achieve their dreams, whether mastering Spanish for professional opportunities, travel, or private interest. Here, we value dedication, interaction, and the progress of each student in a welcoming and motivating environment. Come learn with us and discover a new world of possibilities!"
   },
   "Left": {
     "title": "What would your experience with us be like?",
@@ -36,13 +36,13 @@
     "name": "Name",
     "surname": "Surname",
     "email": "Email",
-    "motivation": "Reason for Inquiry",
-    "empresarial": "Empresarial",
+    "reason": "Reason for Inquiry",
+    "business": "Empresarial",
     "private": "Private",
     "travel": "Travel",
     "pleasure": "Pleasure",
     "others": "Others", 
-    "selectMotivation": "Select Motivation",
+    "selectReason": "Select Reason",
     "message": "Comments",
     "submit": "Submit Inquiry"
   },

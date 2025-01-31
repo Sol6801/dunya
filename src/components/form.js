@@ -14,8 +14,8 @@ export default function Form() {
     name: '',
     surname: '',
     email: '',
-    motivation: '',
-    message: ''
+    reason: '',
+    comments: ''
   });
 
   const handleChange = (e) => {
@@ -29,14 +29,13 @@ export default function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    const mailtoLink = `mailto:dunyaidiomas@gmail.com?subject=${encodeURIComponent(formData.motivation)}&body=${encodeURIComponent(
-      `name: ${formData.name}
-surname: ${formData.surname}
+    const mailtoLink = `mailto:dunyaidiomas@gmail.com?subject=${encodeURIComponent(formData.reason)}&body=${encodeURIComponent(
+      `Nome: ${formData.name}
+Sobrenome: ${formData.surname}
 Email: ${formData.email}
-motivation: ${formData.motivation}
 
-message:
-${formData.message}`
+Comentários:
+${formData.comments}`
     )}`;
 
     window.open(mailtoLink, '_blank');
@@ -94,35 +93,35 @@ ${formData.message}`
           </div>
 
           <div>
-            <label htmlFor="motivation" className="block text-left text-sm font-medium text-gray-700 mb-1">
-              {t.motivation}
+            <label htmlFor="reason" className="block text-left text-sm font-medium text-gray-700 mb-1">
+              {t.reason}
             </label>
             <select
-              id="motivation"
-              name="motivation"
-              value={formData.motivation}
+              id="reason"
+              name="reason"
+              value={formData.reason}
               onChange={handleChange}
               className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-950"
               required
             >
-              <option value="">{t.selectMotivation}</option>
-              <option value="empresarial">{t.empresarial}</option>
-              <option value="private">{t.private}</option>
-              <option value="travel">{t.travel}</option>
-              <option value="pleasure">{t.pleasure}</option>
-              <option value="others">{t.others}</option>
+              <option value="">{t.selectReason}</option>
+              <option value="Empresarial">{t.business}</option>
+              <option value="Particular">{t.private}</option>
+              <option value="Viagem">{t.travel}</option>
+              <option value="Lazer">{t.pleasure}</option>
+              <option value="Outros">{t.others}</option>
             </select>
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-left text-sm font-medium text-gray-700 mb-1">
-              {t.message}
+            <label htmlFor="comments" className="block text-left text-sm font-medium text-gray-700 mb-1">
+              {t.comments}
             </label>
             <textarea
-              id="message"
-              name="message"
+              id="comments"
+              name="comments"
               rows="4"
-              value={formData.message}
+              value={formData.comments}
               onChange={handleChange}
               className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-950"
               required

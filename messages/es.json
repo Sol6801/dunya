@@ -36,7 +36,7 @@
     "name": "Nombre",
     "surname": "Apellido",
     "email": "Correo Electrónico",
-    "motivation": "Motivo de la consulta",
+    "reason": "Motivo de la consulta",
     "business": "Empresarial",
     "private": "Particular",
     "travel": "Viaje",

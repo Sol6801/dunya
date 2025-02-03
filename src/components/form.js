@@ -167,7 +167,7 @@ export default function Form() {
 
           <div>
             <label htmlFor="comments" className="block text-left text-sm font-medium text-gray-700 mb-1">
-              {t.comments}
+              {t.message}
             </label>
             <textarea
               id="comments"

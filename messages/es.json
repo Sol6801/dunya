@@ -44,7 +44,15 @@
     "others": "Otros", 
     "selectReason": "Seleccione un Motivo",
     "message": "Comentarios",
-    "submit": "Enviar Consulta"
+    "submit": "Enviar Consulta",
+    "sending": "Enviando...",
+    "success": "Consulta enviada con éxito!",
+    "error": "Ocurrió un error al enviar el correo electrónico!",
+    "nativeLanguage": "Lengua Materna",
+    "selectNativeLanguage": "Seleccione su Lengua Materna",
+    "es": "Español",
+    "pt": "Portugués",
+    "en": "Inglés"
   },
     "Footer": {
       "rights": "© 2025 Dunya. Todos los derechos reservados."

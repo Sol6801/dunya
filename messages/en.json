@@ -44,7 +44,16 @@
     "others": "Others", 
     "selectReason": "Select Reason",
     "message": "Comments",
-    "submit": "Submit Inquiry"
+    "submit": "Submit Inquiry",
+    "sending": "Sending...",
+    "success": "Inquiry sent successfully!",
+    "error": "An error occurred while sending the email!",
+    "nativeLanguage": "Native Language",
+    "selectNativeLanguage": "Select Native Language",
+    "es": "Spanish",
+    "pt": "Portuguese",
+    "en": "English"
+
   },
   "Footer": {
     "rights": "© 2025 Dunya. All rights reserved."

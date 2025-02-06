@@ -36,28 +36,37 @@ export default function Form() {
     e.preventDefault();
     setStatus({ submitting: true, success: false, error: null });
 
+    
+    const formElement = e.target;
+    const formAction = `/send-email.php`; // Ruta al archivo PHP
+
+
     try {
-      const response = await fetch('/api/send-email', {
+      const formDataObj = new FormData(formElement);
+      const response = await fetch(formAction, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formDataObj
       });
 
       if (!response.ok) {
         throw new Error('Failed to send email');
       }
 
-      setStatus({ submitting: false, success: true, error: null });
-      setFormData({
-        name: '',
-        surname: '',
-        email: '',
-        reason: '',
-        comments: '',
-        nativeLanguage: ''
-      });
+      const result = await response.json();
+      
+      if (result.success) {
+        setStatus({ submitting: false, success: true, error: null });
+        setFormData({
+          name: '',
+          surname: '',
+          email: '',
+          reason: '',
+          comments: '',
+          nativeLanguage: ''
+        });
+      } else {
+        throw new Error(result.message || 'Failed to send email');
+      }
     } catch (error) {
       setStatus({ submitting: false, success: false, error: error.message });
     }

@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteBase /
+
+# Manejar rutas de idiomas
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([a-z]{2})$ $1.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-z]{2})/([^/]+)$ $1/$2.html [L]
+
+# Regla general para archivos HTML
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]

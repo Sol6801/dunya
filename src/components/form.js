@@ -138,9 +138,9 @@ export default function Form() {
               required
             >
               <option value="">{t.selectNativeLanguage}</option>
-              <option value="es">{t.es}</option>
-              <option value="pt">{t.pt}</option>
-              <option value="en">{t.en}</option>
+              <option value="Español">{t.es}</option>
+              <option value="Português">{t.pt}</option> 
+              <option value="English">{t.en}</option>
             </select>
           </div>
 

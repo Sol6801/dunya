@@ -20,8 +20,9 @@ export async function POST(request) {
     await transporter.sendMail({
       from: process.env.EMAIL_USER, // tu email de Hostinger
       to: 'administration@dunyaidiomas.com',
-      subject: `Nova Consulta: ${body.reason}, idioma materno (${body.nativeLanguage})`,
+      subject: `Nova Consulta: ${body.reason}, (${body.nativeLanguage})`,
       text: `
+        Idioma nativo: ${body.nativeLanguage}
         Nome: ${body.name}
         Sobrenome: ${body.surname}
         Email: ${body.email}
